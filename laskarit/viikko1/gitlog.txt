@@ -1,0 +1,104 @@
+commit 18176eb57119b0fa2261dd6c82f1b35ef555ea54
+Author: Antti Ollikkala <antti@huom.io>
+Date:   Tue Mar 17 18:51:49 2020 +0200
+
+    paljon muutoksia
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit f9591cfd9a8060eddcbc90d620a84fb2320bbd04
+Author: Antti Ollikkala <antti@huom.io>
+Date:   Tue Mar 17 18:50:49 2020 +0200
+
+    muokattu
+
+ tiedostoja/file3 | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit e5f7071f596a548a8e07ef0fceb6b7e83d1b8565
+Author: Antti Ollikkala <antti@huom.io>
+Date:   Tue Mar 17 18:49:12 2020 +0200
+
+    filet lisatty
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit fdd6f76c4363499408a70821a75fcaedb7dc729a
+Author: Antti Ollikkala <antti@huom.io>
+Date:   Tue Mar 17 18:46:42 2020 +0200
+
+    juu
+
+ eka.txt    | 1 +
+ kolmas.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 9adf6af7c854eb7983c8f2162b6f1d3c96638e2e
+Author: Antti Ollikkala <antti@huom.io>
+Date:   Tue Mar 17 18:43:34 2020 +0200
+
+    muutoksia taas
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 4b02f8341a572bb67dcccaa0a807e0956a233ef9
+Author: Antti Ollikkala <antti@huom.io>
+Date:   Tue Mar 17 18:42:37 2020 +0200
+
+    toinen poistettu
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 6ac3f0120a51ec67ad7f6a032a8e96d8a2088c83
+Author: Antti Ollikkala <antti@huom.io>
+Date:   Tue Mar 17 18:38:19 2020 +0200
+
+    lisatty taas juttuja
+
+ stuff/tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 6ba6ab7207eae616e84b57ff8c9204f91fb2ad02
+Author: Antti Ollikkala <antti@huom.io>
+Date:   Tue Mar 17 18:37:29 2020 +0200
+
+    muutoksia tehty
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 9a575a1498136fe080d48e7876dd504d020d48ae
+Author: Antti Ollikkala <antti@huom.io>
+Date:   Tue Mar 17 18:36:50 2020 +0200
+
+    kolmas lisatty
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit eeec4def255128a6a987e8f17bbeb2988505afe5
+Author: Antti Ollikkala <antti@huom.io>
+Date:   Tue Mar 17 18:33:51 2020 +0200
+
+    muutos ja lisays
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 14915db6edba8a81124ca784bda57f6482a2ff3c
+Author: Antti Ollikkala <antti@huom.io>
+Date:   Tue Mar 17 18:31:24 2020 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
