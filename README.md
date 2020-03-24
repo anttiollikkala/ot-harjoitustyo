@@ -2,9 +2,14 @@
 
 ## Tehtävät
 
+### Vk1
 [gitlog.txt](/laskarit/viikko1/gitlog.txt)  
 [komentorivi.txt](/laskarit/viikko1/komentorivi.txt)  
 
-muutos
+### Vk2
+[Unicafe](/laskarit/viikko2/Unicafe) 
+[testikattavuus](/laskarit/viikko2/testikattavuus.png) 
 
-muutos2
+## Dokumentaatio
+[Tuntikirjanpito](/dokumentaatio/tuntikirjanpito.md)  
+[Vaatimusmäärittely](/dokumentaatio/vaatimusmaarittely.md)  
