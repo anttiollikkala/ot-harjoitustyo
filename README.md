@@ -7,8 +7,8 @@
 [komentorivi.txt](/laskarit/viikko1/komentorivi.txt)  
 
 ### Vk2
-[Unicafe](/laskarit/viikko2/Unicafe) 
-[testikattavuus](/laskarit/viikko2/testikattavuus.png) 
+[Unicafe](/laskarit/viikko2/Unicafe)  
+[testikattavuus](/laskarit/viikko2/testikattavuus.png)  
 
 ## Dokumentaatio
 [Tuntikirjanpito](/dokumentaatio/tuntikirjanpito.md)  
