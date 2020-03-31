@@ -27,7 +27,6 @@ public class Main {
             System.out.println("Error while connecting to database: " + e.getMessage());
             System.exit(1);
         }
-        
         UI ui = new UI(in);
         ui.Start();
     }

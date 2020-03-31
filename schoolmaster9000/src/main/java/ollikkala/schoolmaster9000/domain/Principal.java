@@ -9,6 +9,6 @@ package ollikkala.schoolmaster9000.domain;
  *
  * @author anttiollikkala
  */
-public class School {
-    private String name;
+public class Principal implements User {
+    
 }
