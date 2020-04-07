@@ -7,7 +7,7 @@ Ui kerros vastaa käyttöliittymästä, domain sovelluslogiikasta ja DAO tietoje
 
 ## Sovelluslogiikka
 Sovellus noudattaa ratkaisevilta osin seuraavan luokkaakaavion kuvaavaa mallia:
-<img alt="luokkakaavio" src="https://github.com/anttiollikkala/ot-harjoitustyo/blob/master/dokumentaatio/img/luokkakaavio.png?raw=true" style="max-width: 320px; height: auto">
+<img alt="luokkakaavio" src="https://github.com/anttiollikkala/ot-harjoitustyo/blob/master/dokumentaatio/img/luokkakaavio.png?raw=true" width="500">
 ## Tietojen pysyvÃ¤istallennus
 
 Sovellukseen luodaan Data Access Object -mallilla rajapinta SQLite tietokantaan. 
