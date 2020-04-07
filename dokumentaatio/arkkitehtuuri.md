@@ -2,12 +2,13 @@
 
 ## Rakenne
 
-Ohjelman toteutuksessa hyÃ¶dynnetÃ¤Ã¤n kolmikerroksista suunnittelumallia, jossa kerrokset ovat ui, domain ja DAO.
-Ui kerros vastaa kÃ¤yttÃ¶liittymÃ¤stÃ¤m, domain sovelluslogiikasta ja DAO tietojen pysyÃvÃ¤istallennuksen hoitamisesta.
+Ohjelman toteutuksessa hyödynnetään kolmikerroksista suunnittelumallia, jossa kerrokset ovat ui, domain ja DAO.
+Ui kerros vastaa käyttöliittymästä, domain sovelluslogiikasta ja DAO tietojen pysyväistallennukse hoitamisesta.
 
 ## Sovelluslogiikka
-<img alt="luokkakaavio" src="https://github.com/anttiollikkala/ot-harjoitustyo/blob/master/dokumentaatio/img/luokkakaavio.png?raw=true">
+Sovellus noudattaa ratkaisevilta osin seuraavan luokkaakaavion kuvaavaa mallia:
+<img alt="luokkakaavio" src="https://github.com/anttiollikkala/ot-harjoitustyo/blob/master/dokumentaatio/img/luokkakaavio.png?raw=true" style="max-width: 320px; height: auto">
 ## Tietojen pysyvÃ¤istallennus
 
 Sovellukseen luodaan Data Access Object -mallilla rajapinta SQLite tietokantaan. 
-Kaikki sovelluksen tiedot tallennetaan yhteen tietokantatiedostoon siihen kansioonm , mistÃ¤ sovellus ajetaan.
+Kaikki sovelluksen tiedot tallennetaan yhteen tietokantatiedostoon siihen kansioonm , mistä sovellus ajetaan.
