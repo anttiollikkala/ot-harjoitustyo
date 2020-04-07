@@ -9,6 +9,10 @@ package ollikkala.schoolmaster9000.domain;
  *
  * @author anttiollikkala
  */
-public interface User {
+public class User {
+    
+    public User() {
+    
+    }
     
 }

@@ -16,17 +16,17 @@ import ollikkala.schoolmaster9000.domain.Student;
  * @author anttiollikkala
  */
 
-public class StudentService {
+public class UserService {
     
-    private ArrayList<Student> students;
+    private ArrayList<User> users;
     private Connection connection;
     
-    public StudentService(Connection connection) {
+    public UserService(Connection connection) {
         this.connection = connection;
-        this.students = new ArrayList<>();
+        this.users = new ArrayList<>();
     }
     
-    public Student add(Student student) {
+    public User add(User user) {
         try {
             PreparedStatement stmt = this.connection.prepareStatement(
                     "INSERT INTO Students (nimi) VALUES (?)"
@@ -35,9 +35,12 @@ public class StudentService {
             
         }
         
-        student.setStudentID(this.generateStudentID());
-        this.students.add(student);
-        return student;
+        this.users.add(user);
+        return user;
+    }
+    
+    public int getCount() {
+        return this.users.size();
     }
     
     private String generateStudentID() {

@@ -9,6 +9,6 @@ package ollikkala.schoolmaster9000.domain;
  *
  * @author anttiollikkala
  */
-public class Principal implements User {
+public class Principal extends User {
     
 }

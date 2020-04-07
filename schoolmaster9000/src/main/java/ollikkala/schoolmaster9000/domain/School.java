@@ -5,10 +5,15 @@
  */
 package ollikkala.schoolmaster9000.domain;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author anttiollikkala
  */
 public class School {
     private String name;
+    private User pricinipal;
+    private ArrayList<User> teachers;
+    private ArrayList<User> students;
 }

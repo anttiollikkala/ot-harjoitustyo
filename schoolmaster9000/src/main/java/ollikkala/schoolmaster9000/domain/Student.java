@@ -17,15 +17,15 @@ public class Student {
         this.name = name;
     }
     
-    public void SetStudentID(String studentID) {
+    public void setStudentID(String studentID) {
         this.studentID = studentID;
     }
     
-    public String GetStudentID() {
+    public String getStudentID() {
         return this.studentID;
     }
     
-    public String GetName() {
+    public String getName() {
         return this.name;
     }
     
