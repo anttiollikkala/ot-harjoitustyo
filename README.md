@@ -16,16 +16,17 @@ Ohjelman voi suorittaa komentoriviltä komennolla
 mvn compile exec:java -Dexec.mainClass=ollikkala.schoolmaster9000.Main
 ```
 
+## Releaset
+
+[v0.1 Viikko5](/releases/tag/v0.1)
+
+
 ### Testaus
 
 Testit suoritetaan komennolla
 ```
 mvn test
 ```
-
-## Releaset
-
-[v0.1 Viikko5](/releases/tag/v0.1)
 
 Testikattavuusraportti luodaan komennolla
 
