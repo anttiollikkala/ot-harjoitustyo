@@ -3,10 +3,11 @@
 ## Rakenne
 
 Ohjelman toteutuksessa hyödynnetään kolmikerroksista suunnittelumallia, jossa kerrokset ovat ui, domain ja DAO.
-Ui kerros vastaa käyttöliittymästäm, domain sovelluslogiikasta ja DAO tietojen pysy�väistallennuksen hoitamisesta.
+Ui kerros vastaa käyttöliittymästä, domain sovelluslogiikasta ja DAO tietojen pysyväistallennukse hoitamisesta.
 
 ## Sovelluslogiikka
-![Luokkakaavio](/img/luokkakaavio.png)
+Sovellus noudattaa ratkaisevilta osin seuraavan luokkaakaavion kuvaavaa mallia:
+<img alt="luokkakaavio" src="https://github.com/anttiollikkala/ot-harjoitustyo/blob/master/dokumentaatio/img/luokkakaavio.png?raw=true" width="500">
 ## Tietojen pysyväistallennus
 
 Sovellukseen luodaan Data Access Object -mallilla rajapinta SQLite tietokantaan. 
