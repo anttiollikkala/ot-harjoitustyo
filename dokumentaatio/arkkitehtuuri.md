@@ -14,4 +14,5 @@ Sovellukseen luodaan Data Access Object -mallilla rajapinta SQLite tietokantaan.
 Kaikki sovelluksen tiedot tallennetaan yhteen tietokantatiedostoon siihen kansioonm , mistä sovellus ajetaan.
 
 ## Päätoiminnallisuudet
+Tilanteen alussa käyttäjä on luomassa koulua ja täyttänyt jo vaadittavat kentät koulun luomista varten.
 <img alt="Sekvenssikaavio" src="https://github.com/anttiollikkala/ot-harjoitustyo/blob/master/dokumentaatio/img/Sekvenssikaavio.png?raw=true">
