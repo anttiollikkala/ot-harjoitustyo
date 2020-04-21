@@ -12,17 +12,43 @@ import java.util.ArrayList;
  * @author anttiollikkala
  */
 public class Course {
+    private int id;
     private final String name;
+    private final String identifier;
     private final int studyPoints;
-    private final int duration;
+    private int participantsCount;
     private Teacher teacher;
     private ArrayList<Student> students;
     
-    public Course(String name, Teacher teacher, int studyPoints, int duration) {
+    public Course(String name, String identifier, int studyPoints, int duration) {
         this.name = name;
-        this.teacher = teacher;
+        this.identifier = identifier;
+        //this.teacher = teacher;
         this.studyPoints = studyPoints;
-        this.duration = duration;
+    }
+    
+    public Course(int id, String name, String identifier, int studyPoints, int duration) {
+        this.id = id;
+        this.name = name;
+        this.identifier = identifier;
+        //this.teacher = teacher;
+        this.studyPoints = studyPoints;
+    }
+    
+    public int getId() {
+        return this.id;
+    }
+    
+    public String getName() {
+        return this.name;
+    }
+    
+    public String getIdentifier() {
+        return this.identifier;
+    }
+    
+    public int getParticipantsCount() {
+        return this.participantsCount;
     }
     
 }

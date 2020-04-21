@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import ollikkala.schoolmaster9000.dao.UserDao;
 import ollikkala.schoolmaster9000.domain.Student;
 
 /**
@@ -18,31 +19,21 @@ import ollikkala.schoolmaster9000.domain.Student;
 
 public class UserService {
     
-    private ArrayList<User> users;
-    private Connection connection;
+    private UserDao dao;
     
-    public UserService(Connection connection) {
-        this.connection = connection;
-        this.users = new ArrayList<>();
+    public UserService(UserDao dao) {
+        this.dao = dao;
     }
-    
-    public User add(User user) {
-        try {
-            PreparedStatement stmt = this.connection.prepareStatement(
-                    "INSERT INTO Students (nimi) VALUES (?)"
-            );
-        } catch (SQLException e) {
-            
+
+    public User login(String email, String password) {
+        User user = this.dao.findByEmail(email);
+        if (user != null && user.password().equals(password)) {
+            return user;
+        } else {
+            return null;
         }
+    }
         
-        this.users.add(user);
-        return user;
-    }
-    
-    public int getCount() {
-        return this.users.size();
-    }
-    
     private String generateStudentID() {
         StringBuilder sb = new StringBuilder(10);
         String nums = "1234567890";

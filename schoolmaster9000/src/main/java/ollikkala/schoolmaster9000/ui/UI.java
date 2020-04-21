@@ -7,6 +7,7 @@ package ollikkala.schoolmaster9000.ui;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.util.ArrayList;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -22,6 +23,9 @@ import javafx.scene.layout.VBox;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -30,7 +34,12 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.Priority;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import ollikkala.schoolmaster9000.dao.CourseDao;
+import ollikkala.schoolmaster9000.dao.SchoolDao;
+import ollikkala.schoolmaster9000.dao.UserDao;
+import ollikkala.schoolmaster9000.domain.Course;
 import ollikkala.schoolmaster9000.domain.SchoolService;
+import ollikkala.schoolmaster9000.domain.User;
 import ollikkala.schoolmaster9000.domain.UserService;
 
 /**
@@ -39,6 +48,10 @@ import ollikkala.schoolmaster9000.domain.UserService;
  */
 public class UI extends Application {
 
+    private User currentUser;
+    private UserDao userDao;
+    private CourseDao courseDao;
+    private SchoolDao schoolDao;
     private Connection connection;
     private SchoolService schoolService;
     private UserService userService;
@@ -50,7 +63,11 @@ public class UI extends Application {
         Class.forName("org.sqlite.JDBC");
         this.connection = DriverManager.getConnection("jdbc:sqlite:database.db");
         this.schoolService = new SchoolService(this.connection);
-        this.userService = new UserService(this.connection);
+        
+        this.courseDao = new CourseDao(this.connection);
+        this.schoolDao = new SchoolDao(this.connection);
+        this.userDao = new UserDao(this.connection);
+        this.userService = new UserService(this.userDao);
     }
 
     @Override
@@ -59,12 +76,11 @@ public class UI extends Application {
         BorderPane loginScreen = this.getLoginScene();
 
         Scene scene;
-        if (this.userService.getCount() == 0) {
+        if (this.schoolDao.GetSchoolName().equals("")) {
             scene = new Scene(this.getCreateNewScoolView(), 640, 480);
         } else {
             scene = new Scene(loginScreen, 640, 480);
         }
-        
         stage.setScene(scene);
         stage.show();
     }
@@ -101,7 +117,7 @@ public class UI extends Application {
         this.ascene = scene;
         return scene;
     }
-    
+
     private BorderPane getCreateNewScoolView() {
         BorderPane bp = new BorderPane();
         Pane pane = new Pane();
@@ -113,15 +129,37 @@ public class UI extends Application {
         otsikko.setFont(new Font("System", 24));
         stack.getChildren().add(otsikko);
         stack.getChildren().add(new Label("Koulun nimi"));
-        stack.getChildren().add(new TextField());
-        stack.getChildren().add(new Label("Nimesi"));
-        stack.getChildren().add(new TextField());
+        TextField schoolNameField = new TextField();
+        stack.getChildren().add(schoolNameField);
+
+        stack.getChildren().add(new Label("Etunimesi"));
+        TextField firstNameField = new TextField();
+        stack.getChildren().add(firstNameField);
+
+        stack.getChildren().add(new Label("Sukunimesi"));
+        TextField lastNameField = new TextField();
+        stack.getChildren().add(lastNameField);
+
         stack.getChildren().add(new Label("Sähköpostiosoitteesi"));
-        stack.getChildren().add(new TextField());
+        TextField emailField = new TextField();
+        stack.getChildren().add(emailField);
+
         stack.getChildren().add(new Label("Valitse salasana"));
-        stack.getChildren().add(new PasswordField());
+        TextField passwordField = new PasswordField();
+        stack.getChildren().add(passwordField);
+
         Button loginButton = new Button("Kirjaudu");
         loginButton.setOnAction((ActionEvent e) -> {
+            this.userDao.install();
+            this.schoolDao.install();
+            this.courseDao.install();
+            this.schoolDao.create(schoolNameField.getText());
+            User principal = new User(firstNameField.getText(), lastNameField.getText(), emailField.getText());
+            principal.setPassword(passwordField.getText());
+            this.userDao.create(principal);
+            this.userDao.setPrincipal(principal.id());
+            principal.setPrincipal(true);
+            this.currentUser = principal;
             this.stage.setScene(this.getLoggedInScene());
         });
 
@@ -140,32 +178,24 @@ public class UI extends Application {
         stack.getChildren().add(otsikko);
 
         stack.getChildren().add(new Label("Etunimi"));
-        TextField firstName = new TextField("Testi");
+        TextField firstName = new TextField(this.currentUser.firstName());
         firstName.setEditable(false);
         stack.getChildren().add(firstName);
 
         stack.getChildren().add(new Label("Etunimi"));
-        TextField lastName = new TextField("Käyttäjä");
+        TextField lastName = new TextField(this.currentUser.lastName());
         lastName.setEditable(false);
         stack.getChildren().add(lastName);
 
         stack.getChildren().add(new Label("Opiskelijanumero"));
-        TextField studentId = new TextField("023452131");
+        TextField studentId = new TextField(String.valueOf(this.currentUser.id()));
         studentId.setEditable(false);
         stack.getChildren().add(studentId);
 
         stack.getChildren().add(new Label("Sähköposti"));
-        stack.getChildren().add(new TextField("testikayttaja@helsinki.fi"));
-
-        stack.getChildren().add(new Label("Uusi salasana"));
-        stack.getChildren().add(new PasswordField());
-
-        Button saveButton = new Button("Tallenna");
-        stack.getChildren().add(saveButton);
-
-        saveButton.setOnAction((ActionEvent e) -> {
-            System.out.println("Clicked!");
-        });
+        TextField emailField = new TextField(this.currentUser.email());
+        emailField.setEditable(false);
+        stack.getChildren().add(emailField);
         return stack;
     }
 
@@ -186,6 +216,32 @@ public class UI extends Application {
         Label otsikko = new Label("Kurssit");
         otsikko.setFont(new Font("System", 24));
         stack.getChildren().add(otsikko);
+        TableView table = new TableView();
+
+        TableColumn idColumn = new TableColumn("id");
+        idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+        table.getColumns().add(idColumn);
+        
+        TableColumn nameColumn = new TableColumn("nimi");
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        table.getColumns().add(nameColumn);
+        
+        TableColumn identifierColumn = new TableColumn("tunnus");
+        identifierColumn .setCellValueFactory(new PropertyValueFactory<>("identifier"));
+        table.getColumns().add(identifierColumn);
+        
+        TableColumn participantCountColumn = new TableColumn("osallistujia");
+        participantCountColumn .setCellValueFactory(new PropertyValueFactory<>("participantCount"));
+        table.getColumns().add(participantCountColumn);
+        
+        stack.getChildren().add(table);
+        
+        ArrayList<Course> courses = this.courseDao.getAll();
+        
+        courses.forEach( course -> {
+            table.getItems().add(course);
+        });
+        
         return stack;
     }
 
@@ -193,8 +249,21 @@ public class UI extends Application {
         TreeItem<String> rootItem = new TreeItem<>("Inbox");
         TreeView<String> tree = new TreeView<>(rootItem);
         rootItem.getChildren().add(new TreeItem<>("Tilastot"));
-        rootItem.getChildren().add(new TreeItem<>("Kurssit"));
+
+        TreeItem kurssitItem = new TreeItem<>("Kurssit");
+        rootItem.getChildren().add(kurssitItem);
         rootItem.getChildren().add(new TreeItem<>("Omat tiedot"));
+        if (this.currentUser.isPrincipal() || this.currentUser.isTeacher()) {
+            TreeItem opiskelijatItem = new TreeItem<>("Opiskelijat");
+            rootItem.getChildren().add(opiskelijatItem);
+            opiskelijatItem.getChildren().add(new TreeItem<>("Uusi Opiskelija"));
+            kurssitItem.getChildren().add(new TreeItem<>("Uusi kurssi"));
+        }
+        if (this.currentUser.isPrincipal()) {
+            TreeItem opettajatItem = new TreeItem<>("Opettajat");
+            rootItem.getChildren().add(opettajatItem);
+            opettajatItem.getChildren().add(new TreeItem<>("Uusi opettaja"));
+        }
         tree.setShowRoot(false);
         return tree;
     }
@@ -205,13 +274,27 @@ public class UI extends Application {
         stack.setMaxWidth(300);
         stack.setAlignment(Pos.CENTER);
         stack.setSpacing(5);
+        
+        Label title = new Label(this.schoolDao.GetSchoolName());
+        title.setFont(new Font("System", 24));
+        stack.getChildren().add(title);
+        
         stack.getChildren().add(new Label("Sähköpostiosoite"));
-        stack.getChildren().add(new TextField());
+        TextField emailField = new TextField();
+        stack.getChildren().add(emailField);
         stack.getChildren().add(new Label("Salasana"));
-        stack.getChildren().add(new PasswordField());
+        PasswordField passwordField = new PasswordField();
+        stack.getChildren().add(passwordField);
         Button loginButton = new Button("Kirjaudu");
         loginButton.setOnAction((ActionEvent e) -> {
-            this.stage.setScene(this.getLoggedInScene());
+            User user = this.userService.login(emailField.getText(), passwordField.getText());
+            if (user != null) {
+                this.currentUser = user;
+                this.stage.setScene(this.getLoggedInScene());
+            } else {
+                emailField.setText("");
+                passwordField.setText("");
+            }
         });
 
         stack.getChildren().add(loginButton);
