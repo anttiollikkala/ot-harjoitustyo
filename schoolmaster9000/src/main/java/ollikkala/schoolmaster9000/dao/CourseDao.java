@@ -27,38 +27,32 @@ public class CourseDao {
         this.conn = conn;
     }
 
-    public void findById(int id) throws SQLException {
+    /*public void findById(int id) throws SQLException {
 
-    }
+    }*/
 
     public ArrayList<Course> getAll() {
+        ArrayList<Course> courses = new ArrayList<>();
         try {
             Statement stmt = this.conn.createStatement();
             stmt.execute("SELECT c.id, c.name, c.identifier, c.created, count(p.user_id) "
                     + "FROM courses c LEFT JOIN participations p ON p.course_id = c.id GROUP BY c.id"
             );
             ResultSet results = stmt.getResultSet();
-            ArrayList<Course> courses = new ArrayList<>();
+            
             if (results.next()) {
-                int id = results.getInt(1);
-                String name = results.getString(2);
-                String identifier = results.getString(3);
-                Time created = results.getTime(4);
-                int participantCount = results.getInt(1);
-                Course course = new Course(id, name, identifier, 1, 1);
+                Course course = new Course(results.getInt(1), results.getString(2), results.getString(3), 1, results.getTime(4), results.getInt(5));
                 courses.add(course);
             }
             return courses;
         } catch (Exception e) {
-            System.out.println("Error while fetching courses: " + e.getMessage());
-            System.exit(1);
+            return courses;
         }
-        return null;
     }
 
-    public void create(Course course) {
-
-    }
+    /*public void create(Course course) {
+        
+    }*/
 
     public boolean install() {
         try {

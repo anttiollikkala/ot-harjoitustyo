@@ -23,6 +23,10 @@ Testit suoritetaan komennolla
 mvn test
 ```
 
+## Releaset
+
+[v0.1 Viikko5](/releases/tag/v0.1)
+
 Testikattavuusraportti luodaan komennolla
 
 ```

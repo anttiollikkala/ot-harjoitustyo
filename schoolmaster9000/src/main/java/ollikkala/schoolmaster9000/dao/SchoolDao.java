@@ -16,27 +16,27 @@ import java.sql.Statement;
  * @author anttiollikkala
  */
 public class SchoolDao {
-    
+
     private Connection conn;
-    
+
     public SchoolDao(Connection conn) {
         this.conn = conn;
     }
-    
-    public void create(String schoolName){
+
+    public void create(String schoolName) {
         try {
             PreparedStatement stmt = this.conn.prepareStatement(
-                            "INSERT INTO config (config_key, config_val) VALUES (?,?)"
-                    );
-        stmt.setString(1, "school_name");
-        stmt.setString(2, schoolName);
-        stmt.execute();
+                    "INSERT INTO config (config_key, config_val) VALUES (?,?)"
+            );
+            stmt.setString(1, "school_name");
+            stmt.setString(2, schoolName);
+            stmt.execute();
         } catch (SQLException e) {
-            
+
         }
     }
-    
-    public String GetSchoolName() {
+
+    public String getSchoolName() {
         try {
             Statement s = this.conn.createStatement();
             s.execute("SELECT config_val FROM config WHERE config_key = 'school_name'");
@@ -49,10 +49,10 @@ public class SchoolDao {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        
+
         return "";
     }
-    
+
     public boolean install() {
         try {
             Statement s = this.conn.createStatement();
@@ -63,7 +63,6 @@ public class SchoolDao {
                     + ")");
             return true;
         } catch (SQLException e) {
-            System.out.println(e);
             return false;
         }
     }

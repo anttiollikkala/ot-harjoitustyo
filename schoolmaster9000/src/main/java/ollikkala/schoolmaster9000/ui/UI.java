@@ -76,7 +76,7 @@ public class UI extends Application {
         BorderPane loginScreen = this.getLoginScene();
 
         Scene scene;
-        if (this.schoolDao.GetSchoolName().equals("")) {
+        if (this.schoolDao.getSchoolName().equals("")) {
             scene = new Scene(this.getCreateNewScoolView(), 640, 480);
         } else {
             scene = new Scene(loginScreen, 640, 480);
@@ -275,7 +275,7 @@ public class UI extends Application {
         stack.setAlignment(Pos.CENTER);
         stack.setSpacing(5);
         
-        Label title = new Label(this.schoolDao.GetSchoolName());
+        Label title = new Label(this.schoolDao.getSchoolName());
         title.setFont(new Font("System", 24));
         stack.getChildren().add(title);
         

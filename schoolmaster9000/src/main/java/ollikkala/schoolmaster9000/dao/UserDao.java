@@ -45,6 +45,10 @@ public class UserDao {
         }
     }
     
+    /*public void Save(User user) {
+    
+    }*/
+    
     public void setStudent(int uid) {
         try {
             PreparedStatement stmt = this.conn.prepareStatement(
@@ -90,13 +94,13 @@ public class UserDao {
             ResultSet result = stmt.executeQuery();
             if (result.next()) {
                 User user = new User(result.getInt(1), result.getString(2), result.getString(3), result.getString(4));
-                if (result.getInt(5) > 0) {
+                if (result.getInt(6) > 0) {
                     user.setPrincipal(true);
                 }
-                if (result.getInt(6) > 0) {
+                if (result.getInt(7) > 0) {
                     user.setTeacher(true);
                 }
-                if (result.getInt(7) > 0) {
+                if (result.getInt(8) > 0) {
                     user.setStudent(true);
                 }
                 user.setPassword(result.getString(5));

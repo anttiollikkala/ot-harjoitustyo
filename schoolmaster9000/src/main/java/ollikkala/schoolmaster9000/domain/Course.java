@@ -5,6 +5,7 @@
  */
 package ollikkala.schoolmaster9000.domain;
 
+import java.sql.Time;
 import java.util.ArrayList;
 
 /**
@@ -16,8 +17,9 @@ public class Course {
     private final String name;
     private final String identifier;
     private final int studyPoints;
+    private Time created;
     private int participantsCount;
-    private Teacher teacher;
+    private User teacher;
     private ArrayList<Student> students;
     
     public Course(String name, String identifier, int studyPoints, int duration) {
@@ -27,10 +29,11 @@ public class Course {
         this.studyPoints = studyPoints;
     }
     
-    public Course(int id, String name, String identifier, int studyPoints, int duration) {
+    public Course(int id, String name, String identifier, int studyPoints, Time created, int participantCount) {
         this.id = id;
         this.name = name;
         this.identifier = identifier;
+        this.created = created;
         //this.teacher = teacher;
         this.studyPoints = studyPoints;
     }

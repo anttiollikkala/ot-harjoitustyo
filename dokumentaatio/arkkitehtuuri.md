@@ -11,3 +11,6 @@ Ui kerros vastaa käyttöliittymästäm, domain sovelluslogiikasta ja DAO tietoj
 
 Sovellukseen luodaan Data Access Object -mallilla rajapinta SQLite tietokantaan. 
 Kaikki sovelluksen tiedot tallennetaan yhteen tietokantatiedostoon siihen kansioonm , mistä sovellus ajetaan.
+
+## Päätoiminnallisuudet
+![Sekvenssikaavio](/img/sekvenssikaavio.png)
