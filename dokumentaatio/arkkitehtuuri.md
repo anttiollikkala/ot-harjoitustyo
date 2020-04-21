@@ -14,4 +14,4 @@ Sovellukseen luodaan Data Access Object -mallilla rajapinta SQLite tietokantaan.
 Kaikki sovelluksen tiedot tallennetaan yhteen tietokantatiedostoon siihen kansioonm , mistä sovellus ajetaan.
 
 ## Päätoiminnallisuudet
-<img alt="Sekvenssikaavio" src="https://github.com/anttiollikkala/ot-harjoitustyo/blob/master/dokumentaatio/img/Sekvenssikaavio.png?raw=true" width="500">
+<img alt="Sekvenssikaavio" src="https://github.com/anttiollikkala/ot-harjoitustyo/blob/master/dokumentaatio/img/Sekvenssikaavio.png?raw=true">
