@@ -29,7 +29,6 @@ mvn test
 ```
 
 Testikattavuusraportti luodaan komennolla
-<<<<<<< HEAD
 
 ```
 mvn jacoco:report
@@ -42,7 +41,6 @@ Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto target/site/jac
 
 ### Suoritettava JAR
 =======
->>>>>>> 6e27a04be75b0baa592bdda2f6d6acef063ebec2
 
 komennolla
 ```
