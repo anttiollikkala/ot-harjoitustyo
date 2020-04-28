@@ -18,7 +18,7 @@ mvn compile exec:java -Dexec.mainClass=ollikkala.schoolmaster9000.Main
 
 ## Releaset
 
-[Viikko5](/releases/tag/v0.1)
+[Viikko5](/releases/tag/v0.1)  
 [Viikko6](/releases/tag/v0.2)
 
 
@@ -35,10 +35,6 @@ Testikattavuusraportti luodaan komennolla
 mvn jacoco:report
 ```
 Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto target/site/jacoco/index.html
-
-## Releaset
-
-[v0.1 Viikko5](/releases/tag/v0.1)
 
 ### Suoritettava JAR
 
