@@ -12,11 +12,6 @@ Sovelluksen avulla voidaan hallinoida koulun toimintaa sekä opettajien, että o
 
 ### Suoritus
 
-Ohjelman voi suorittaa komentoriviltä komennolla
-```
-mvn compile exec:java -Dexec.mainClass=ollikkala.schoolmaster9000.Main
-```
-
 ## Releaset
 
 [Viikko5](https://github.com/anttiollikkala/ot-harjoitustyo/releases/tag/v0.1)  
