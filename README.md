@@ -8,15 +8,11 @@ Sovelluksen avulla voidaan hallinoida koulun toimintaa sekä opettajien, että o
 [Arkkitehtuuri](/dokumentaatio/arkkitehtuuri.md)  
 [Käyttöohjeet](/dokumentaatio/instructions.md)
 
-## Komentorivitoiminnot
-
-### Suoritus
-
-## Releaset
-
+### Releaset
 [Viikko5](https://github.com/anttiollikkala/ot-harjoitustyo/releases/tag/v0.1)  
 [Viikko6](https://github.com/anttiollikkala/ot-harjoitustyo/releases/tag/v0.2)
 
+## Komentorivitoiminnot
 
 ### Testaus
 
