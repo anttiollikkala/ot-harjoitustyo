@@ -5,6 +5,7 @@
  */
 package domain;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import ollikkala.schoolmaster9000.domain.Student;
@@ -24,6 +25,8 @@ public class StudentServiceTest {
     
     private StudentService service;
     
+    private String dbname;
+    
     public StudentServiceTest() {
     }
     
@@ -37,10 +40,11 @@ public class StudentServiceTest {
     
     @Before
     public void setUp() {
+        this.dbname = "student_serice_test.db";
         Connection yhteys = null;
         try {
             Class.forName("org.sqlite.JDBC");
-            yhteys = DriverManager.getConnection("jdbc:sqlite:test.db");
+            yhteys = DriverManager.getConnection("jdbc:sqlite:" + this.dbname);
         } catch (Exception e) {
             System.out.println("Error while connecting to database: " + e.getMessage());
             System.exit(1);
@@ -50,6 +54,8 @@ public class StudentServiceTest {
     
     @After
     public void tearDown() {
+        File f = new File(this.dbname);
+        f.delete();
     }
 
     @Test

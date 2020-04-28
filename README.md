@@ -23,10 +23,6 @@ Testit suoritetaan komennolla
 mvn test
 ```
 
-## Releaset
-
-[v0.1 Viikko5](/releases/tag/v0.1)
-
 Testikattavuusraportti luodaan komennolla
 
 ```
@@ -34,4 +30,28 @@ mvn jacoco:report
 ```
 Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto target/site/jacoco/index.html
 
+## Releaset
+
+[v0.1 Viikko5](/releases/tag/v0.1)
+
+### Suoritettava JAR
+
+komennolla
+```
+mvn package
+```
+
+### JavaDoc
+Luodaan komennolla
+```
+mvn javadoc:javadoc
+```
+Löytyy tiedostosta target/site/apidocs/index.html
+
+### CheckStyle
+Komennolla
+```
+mvn jxr:jxr checkstyle:checkstyle
+```
+Raportti löytyy tiedostosta:target/site/checkstyle.html
 

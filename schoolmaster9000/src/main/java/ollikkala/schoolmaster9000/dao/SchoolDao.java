@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- *
+ * Class that handles the creation of the school
  * @author anttiollikkala
  */
 public class SchoolDao {
@@ -23,7 +23,14 @@ public class SchoolDao {
         this.conn = conn;
     }
 
-    public void create(String schoolName) {
+     /**
+     * Method removes a participation of user from a course
+     *
+     * @param schoolName Name of the school
+     *
+     * @return returns true if the insertion was successful
+     */
+    public boolean create(String schoolName) {
         try {
             PreparedStatement stmt = this.conn.prepareStatement(
                     "INSERT INTO config (config_key, config_val) VALUES (?,?)"
@@ -31,11 +38,18 @@ public class SchoolDao {
             stmt.setString(1, "school_name");
             stmt.setString(2, schoolName);
             stmt.execute();
+            return true;
         } catch (SQLException e) {
-
+            return false;
         }
     }
+    
 
+     /**
+     * Get the name of the school in database
+     * 
+     * @return name of the existing school
+     */
     public String getSchoolName() {
         try {
             Statement s = this.conn.createStatement();
@@ -53,6 +67,11 @@ public class SchoolDao {
         return "";
     }
 
+     /**
+     * Installs the schema of configuration table
+     * 
+     * @return returns true if the installation was successful
+     */
     public boolean install() {
         try {
             Statement s = this.conn.createStatement();
