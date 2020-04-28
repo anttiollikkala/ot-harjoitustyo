@@ -14,7 +14,6 @@ Sovelluksessa on kolmenlaisia käyttäjiä:
 
 Rehtoreita voi olla vain yksi, mutta opettajia ja oppilaita rajaton määrä. 
 Rehtori voi lisätä opettajia ja oppilaita ja opettaja voi lisätä oppilaita.
-Käyttäjä voi olla samaan aikaan sekä oppilas että opettaja.
 
 ## Toiminnallisuus
 
@@ -22,25 +21,25 @@ Käyttäjä voi olla samaan aikaan sekä oppilas että opettaja.
 
  - Käyttäjä voi kirjautua järjestelmään TEHTY
  - Voidaan luoda koulu, jos ei vielä luotu TEHTY
- - Käyttäjä voi tehdä pyynnön tunnuksille, jonka rehtori voi ainoastaan hyväksyä.
 
 ### Kirjautumisen jälkeen
 
 #### Oppilas
- - Oppilas voi liittyä kursseille
+ - Oppilas voi liittyä kursseille TEHTY
  - Tarkastella opintohistoriaa
  - Tehdä muistiinpanoja kursseihin liittyen
- - Tarkastella aiempien opintojen perusteella luotuja graafeja jotka helpottavat opintojen edistymisen hahmottamista.
 
 #### Opettaja
- - Opettaja voi luoda kursseja
- - Hyväksyä oppilaita kurssille
+ - Opettaja voi luoda kursseja TEHTY
+ - Luoda kursseja joihin oppilaat voi osallistua TEHTY
  - Arvostella kursseille osallistujien suorituksia arvosanoin.
 
 #### Rehtori
- - Kaikkea mitä opettaja
- - Lisätä opettajia järjestelmään
- - Hyväksyä opiskelijoita järjestelmään
+ - Kaikkea mitä opettaja TEHTY
+ - Lisätä opettajia järjestelmään TEHTY
+ 
+#### Kaikki käyttäjät
+- Voi tarkastella luotuja kursseja TEHTY
 
 ## Jatkokehitysideoita
 

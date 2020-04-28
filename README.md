@@ -5,21 +5,14 @@ Sovelluksen avulla voidaan hallinoida koulun toimintaa sekä opettajien, että o
 ## Dokumentaatio
 [Tuntikirjanpito](/dokumentaatio/tuntikirjanpito.md)  
 [Vaatimusmäärittely](/dokumentaatio/vaatimusmaarittely.md)  
-[Arkkitehtuuri](/dokumentaatio/arkkitehtuuri.md)
-
-## Komentorivitoiminnot
-
-### Suoritus
-
-Ohjelman voi suorittaa komentoriviltä komennolla
-```
-mvn compile exec:java -Dexec.mainClass=ollikkala.schoolmaster9000.Main
-```
+[Arkkitehtuuri](/dokumentaatio/arkkitehtuuri.md)  
+[Käyttöohjeet](/dokumentaatio/instructions.md)
 
 ## Releaset
+[Viikko5](https://github.com/anttiollikkala/ot-harjoitustyo/releases/tag/v0.1)  
+[Viikko6](https://github.com/anttiollikkala/ot-harjoitustyo/releases/tag/v0.2)
 
-[v0.1 Viikko5](/releases/tag/v0.1)
-
+## Komentorivitoiminnot
 
 ### Testaus
 
@@ -29,20 +22,13 @@ mvn test
 ```
 
 Testikattavuusraportti luodaan komennolla
-<<<<<<< HEAD
 
 ```
 mvn jacoco:report
 ```
 Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto target/site/jacoco/index.html
 
-## Releaset
-
-[v0.1 Viikko5](/releases/tag/v0.1)
-
 ### Suoritettava JAR
-=======
->>>>>>> 6e27a04be75b0baa592bdda2f6d6acef063ebec2
 
 komennolla
 ```
