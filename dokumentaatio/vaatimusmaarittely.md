@@ -20,7 +20,8 @@ Käyttäjä voi olla samaan aikaan sekä oppilas että opettaja.
 
 ### Ennen kirjautumista
 
- - Käyttäjä voi kirjautua järjestelmään
+ - Käyttäjä voi kirjautua järjestelmään TEHTY
+ - Voidaan luoda koulu, jos ei vielä luotu TEHTY
  - Käyttäjä voi tehdä pyynnön tunnuksille, jonka rehtori voi ainoastaan hyväksyä.
 
 ### Kirjautumisen jälkeen

@@ -16,6 +16,11 @@ Ohjelman voi suorittaa komentoriviltä komennolla
 mvn compile exec:java -Dexec.mainClass=ollikkala.schoolmaster9000.Main
 ```
 
+## Releaset
+
+[v0.1 Viikko5](/releases/tag/v0.1)
+
+
 ### Testaus
 
 Testit suoritetaan komennolla
@@ -24,6 +29,7 @@ mvn test
 ```
 
 Testikattavuusraportti luodaan komennolla
+<<<<<<< HEAD
 
 ```
 mvn jacoco:report
@@ -35,6 +41,8 @@ Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto target/site/jac
 [v0.1 Viikko5](/releases/tag/v0.1)
 
 ### Suoritettava JAR
+=======
+>>>>>>> 6e27a04be75b0baa592bdda2f6d6acef063ebec2
 
 komennolla
 ```
