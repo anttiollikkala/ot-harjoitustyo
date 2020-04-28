@@ -40,7 +40,6 @@ Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto target/site/jac
 [v0.1 Viikko5](/releases/tag/v0.1)
 
 ### Suoritettava JAR
-=======
 
 komennolla
 ```
