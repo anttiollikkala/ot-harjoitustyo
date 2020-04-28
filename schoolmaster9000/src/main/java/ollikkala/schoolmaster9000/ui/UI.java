@@ -8,14 +8,10 @@ package ollikkala.schoolmaster9000.ui;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.ArrayList;
-import java.util.Iterator;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.css.converter.StringConverter;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.event.EventType;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.SplitPane;
@@ -36,7 +32,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.Priority;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -500,7 +495,7 @@ public class UI extends Application {
         table.getColumns().add(lastName);
 
         TableColumn email = new TableColumn("Sähköposti");
-        lastName.setCellValueFactory(new PropertyValueFactory<>("email"));
+        email.setCellValueFactory(new PropertyValueFactory<>("email"));
         table.getColumns().add(email);
 
         stack.getChildren().add(table);
@@ -536,7 +531,7 @@ public class UI extends Application {
         table.getColumns().add(lastName);
 
         TableColumn email = new TableColumn("Sähköposti");
-        lastName.setCellValueFactory(new PropertyValueFactory<>("email"));
+        email.setCellValueFactory(new PropertyValueFactory<>("email"));
         table.getColumns().add(email);
 
         stack.getChildren().add(table);
