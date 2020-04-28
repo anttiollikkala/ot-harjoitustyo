@@ -18,7 +18,8 @@ mvn compile exec:java -Dexec.mainClass=ollikkala.schoolmaster9000.Main
 
 ## Releaset
 
-[v0.1 Viikko5](/releases/tag/v0.1)
+[Viikko5](/releases/tag/v0.1)
+[Viikko6](/releases/tag/v0.2)
 
 
 ### Testaus
