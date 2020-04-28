@@ -5,7 +5,7 @@ Sovelluksen avulla voidaan hallinoida koulun toimintaa sekä opettajien, että o
 ## Dokumentaatio
 [Tuntikirjanpito](/dokumentaatio/tuntikirjanpito.md)  
 [Vaatimusmäärittely](/dokumentaatio/vaatimusmaarittely.md)  
-[Arkkitehtuuri](/dokumentaatio/arkkitehtuuri.md)
+[Arkkitehtuuri](/dokumentaatio/arkkitehtuuri.md)  
 [Käyttöohjeet](/dokumentaatio/instructions.md)
 
 ## Komentorivitoiminnot
