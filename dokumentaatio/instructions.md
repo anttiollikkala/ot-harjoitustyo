@@ -1,7 +1,6 @@
 # Käyttöohje
 
-Lataa viimeisen release Releases välilehdeltä löytyvältä sivulta
-
+Lataa viimeisen versio [tästä](https://github.com/anttiollikkala/ot-harjoitustyo/releases/download/v1.1/schoolmaster9000-1.0-SNAPSHOT.jar)  
 ## Ohjelman käynnistys
 ```
 java -jar schoolmaster9000-1.0-SNAPSHOT.jar
