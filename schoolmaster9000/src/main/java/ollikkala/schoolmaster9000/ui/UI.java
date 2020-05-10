@@ -839,6 +839,7 @@ public class UI extends Application {
                             for (Completion completion : course.getCompletions()) {
                                 if (completion.getStudent().equals(_this.currentUser)) {
                                     setText("suoritettu");
+                                    setGraphic(null);
                                     return;
                                 }
                             }
