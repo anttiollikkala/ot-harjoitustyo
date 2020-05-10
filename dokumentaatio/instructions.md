@@ -1,5 +1,7 @@
 # Käyttöohje
 
+Lataa viimeisen release Releases välilehdeltä löytyvältä sivulta
+
 ## Ohjelman käynnistys
 ```
 java -jar schoolmaster9000-1.0-SNAPSHOT.jar
