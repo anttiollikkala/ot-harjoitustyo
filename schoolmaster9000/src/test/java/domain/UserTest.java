@@ -5,17 +5,8 @@
  */
 package domain;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import ollikkala.schoolmaster9000.domain.Student;
-import ollikkala.schoolmaster9000.domain.StudentService;
 import ollikkala.schoolmaster9000.domain.User;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
@@ -23,31 +14,11 @@ import static org.junit.Assert.*;
  */
 public class UserTest {
 
-    public UserTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
     @Test
-    public void testCanString() {
+    public void testUserToStringIsCorrect() {
         User user = new User(1,"a","b","c");
         assert(user.getId() == 1);
-        assert(user.toString().equals("a b (1)"));
+        assert(user.toString().equals("a b"));
     }
     
 }

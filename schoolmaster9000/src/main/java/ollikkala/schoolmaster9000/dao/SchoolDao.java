@@ -32,9 +32,7 @@ public class SchoolDao {
      */
     public boolean create(String schoolName) {
         try {
-            PreparedStatement stmt = this.conn.prepareStatement(
-                    "INSERT INTO config (config_key, config_val) VALUES (?,?)"
-            );
+            PreparedStatement stmt = this.conn.prepareStatement("INSERT INTO config (config_key, config_val) VALUES (?,?)");
             stmt.setString(1, "school_name");
             stmt.setString(2, schoolName);
             stmt.execute();
@@ -61,10 +59,8 @@ public class SchoolDao {
                 return "";
             }
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            return "";
         }
-
-        return "";
     }
 
      /**

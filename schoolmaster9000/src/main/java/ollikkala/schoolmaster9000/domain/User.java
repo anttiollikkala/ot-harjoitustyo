@@ -12,8 +12,8 @@ package ollikkala.schoolmaster9000.domain;
 public class User {
 
     private int id;
-    private final String firstName;
-    private final String lastName;
+    private String firstName;
+    private String lastName;
     private String email;
     private String password;
     private boolean teacher;
@@ -36,6 +36,10 @@ public class User {
         this.email = email;
     }
 
+    public User(int id) {
+        this.id = id;
+    }
+    
      /**
      * Constructor of User without an id
      *
@@ -51,13 +55,13 @@ public class User {
     }
 
      /**
-     * Constructor of User without an id
+     * User to string
      *
      * @return The string representation of a User
      */
     @Override
     public String toString() {
-        return this.firstName + " " + this.lastName + " (" + this.id + ")";
+        return this.firstName + " " + this.lastName;
     }
 
      /**

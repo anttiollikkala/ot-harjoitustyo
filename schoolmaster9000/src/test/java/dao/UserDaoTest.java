@@ -8,20 +8,19 @@ package dao;
 import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import ollikkala.schoolmaster9000.dao.CourseDao;
-import ollikkala.schoolmaster9000.dao.SchoolDao;
 import ollikkala.schoolmaster9000.dao.UserDao;
 import ollikkala.schoolmaster9000.domain.Course;
-import ollikkala.schoolmaster9000.domain.StudentService;
 import ollikkala.schoolmaster9000.domain.User;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
@@ -30,112 +29,117 @@ import static org.junit.Assert.*;
 public class UserDaoTest {
 
     private Connection connection;
-
-    @Before
-    public void setUp() throws ClassNotFoundException, SQLException {
-        Class.forName("org.sqlite.JDBC");
-        this.connection = DriverManager.getConnection("jdbc:sqlite:user_test_database.db");
-    }
-
-    @Test
-    public void canInstall() {
-        UserDao dao = new UserDao(this.connection);
-        assert (dao.install());
-    }
-
-    @Test
-    public void userCannotBeFoundWithEmailIfNotCreated() {
-        UserDao dao = new UserDao(this.connection);
-        dao.install();
-        User user = dao.findByEmail("Test4");
-        assert (user == null);
-        //assert(user.id() != createdID);
-    }
-
-    @Test
-    public void userCanBeFoundWithEmail() {
-        UserDao dao = new UserDao(this.connection);
-        User principal = new User("Etunimi", "Sukunimi", "Email");
-        principal.setPassword("Password");
-        dao.create(principal);
-        principal.setPrincipal(true);
-        User user = dao.findByEmail("Email");
-        assert (user == null);
-        //assert(user.id() != createdID);
-    }
-
-    @Test
-    public void userCanBeCreated() {
-        UserDao dao = new UserDao(this.connection);
-        dao.install();
-        User newUser = new User("Test1", "Test2", "Test3");
-        newUser.setPassword("password");
-        newUser = dao.create(newUser);
-        assert (newUser != null);
-    }
-    
-    @Test
-    public void userCanGetCourseParticipants() throws SQLException, ClassNotFoundException {
-        File f = new File("cangetcoursestest.db");
-        f.delete();
-        Class.forName("org.sqlite.JDBC");
-        Connection conn = DriverManager.getConnection("jdbc:sqlite:cangetcoursestest.db");
-        UserDao uDao = new UserDao(conn);
-        CourseDao cDao = new CourseDao(conn);
-        assert(uDao.install());
-        assert(cDao.install());
-        User newUser = new User("Test1", "Test2", "Test3");
-        newUser.setPassword("password");
-        newUser = uDao.create(newUser);
-        assert(newUser != null);
-        
-        User teacher = new User("Test_1", "Test_2", "Test_3");
-        teacher.setPassword("password");
-        teacher = uDao.create(teacher);
-        assert(teacher != null);
-        
-        cDao.add(new Course("a", "b", 4, 6, teacher));
-        
-        ArrayList<Course> courses = cDao.getAll();
-        
-        assert(courses.size() == 1);
-        //assert (cDao.addParticipation(1, 1));*/
-        //assert (uDao.getCourseParticipants(1).size() == 1);
-    }
-    
-    @Test
-    public void canGetStudentsAndTeachers() throws SQLException, ClassNotFoundException {
-        File f = new File("cangetstudentstest.db");
-        f.delete();
-        Class.forName("org.sqlite.JDBC");
-        Connection conn = DriverManager.getConnection("jdbc:sqlite:cangetstudentstest.db");
-        UserDao uDao = new UserDao(conn);
-        
-        assert(uDao.install());
-        User newUser = new User("Test1", "Test2", "Test3");
-        newUser.setPassword("password");
-        newUser = uDao.create(newUser);
-        uDao.setStudent(newUser.getId());
-        assert(newUser != null);
-        
-        User teacher = new User("Test_1", "Test_2", "Test_3");
-        teacher.setPassword("password");
-        teacher = uDao.create(teacher);
-        uDao.setTeacher(teacher.getId());
-        assert(teacher != null);
-
-        assert(uDao.getStudents().size() == 1);
-        assert(uDao.getTeachers().size() == 1);
-        
-        //assert (cDao.addParticipation(1, 1));*/
-        //assert (uDao.getCourseParticipants(1).size() == 1);
-    }
+    private UserDao userDao;
+    public boolean initialized = false;
 
     @After
-    public void tearDown() {
-        File f = new File("user_test_database.db");
-        f.delete();
+    public void clearDB() throws SQLException {
+        Statement stmt = this.connection.createStatement();
+        stmt.execute("DELETE FROM users");
     }
 
+    @Before
+    public void before() throws ClassNotFoundException, SQLException {
+        if (!this.initialized) {
+            Class.forName("org.sqlite.JDBC");
+            this.connection = DriverManager.getConnection("jdbc:sqlite:userdao_test_database.db");
+            this.userDao = new UserDao(this.connection);
+            this.userDao.install();
+            this.initialized = true;
+        }
+    }
+
+    @Test
+    public void canCreateUser() {
+        int id = this.userDao.create("Test", "Test", "Test", "Test");
+        assert (id != 0);
+    }
+
+    @Test
+    public void canFindById() {
+        int id = this.userDao.create("Test", "Test", "Test", "Test");
+        User user = this.userDao.findById(id);
+        assert (user != null);
+    }
+
+    @Test
+    public void cantFindByFalseId() {
+        User user = this.userDao.findById(100);
+        assert (user == null);
+    }
+
+    @Test
+    public void canFindByEmail() {
+        this.userDao.create("Test", "Test", "Test", "Test");
+        User user = this.userDao.findByEmail("Test");
+        assert (user != null);
+    }
+
+    @Test
+    public void cantFindByFalseEmail() {
+        User user = this.userDao.findByEmail("Test");
+        assert (user == null);
+    }
+
+    @Test
+    public void canResolveRolesCorrectly() {
+        User user = new User(1);
+        this.userDao.resolveRole(user, 1, 0, 0);
+        assert (user.isPrincipal());
+        user = new User(1);
+        this.userDao.resolveRole(user, 0, 1, 0);
+        assert (user.isTeacher());
+        user = new User(1);
+        this.userDao.resolveRole(user, 0, 0, 1);
+        assert (user.isStudent());
+    }
+
+    @Test
+    public void canSetToPrincipal() {
+        int id = this.userDao.create("Test", "Test", "Test", "Test");
+        assert (this.userDao.setPrincipal(id));
+        User user = this.userDao.findById(id);
+        assert (user.isPrincipal());
+    }
+
+    @Test
+    public void canSetToTeacher() {
+        int id = this.userDao.create("Test", "Test", "Test", "Test");
+        assert (this.userDao.setTeacher(id));
+        User user = this.userDao.findById(id);
+        assert (user.isTeacher());
+    }
+
+    @Test
+    public void canSetToStudent() {
+        int id = this.userDao.create("Test", "Test", "Test", "Test");
+        assert (this.userDao.setStudent(id));
+        User user = this.userDao.findById(id);
+        assert (user.isStudent());
+    }
+
+    @Test
+    public void canGetCorrectAmountOfTeachers() {
+        for (int i = 1; i <= 10; i++) {
+            int id = this.userDao.create("Test", "Test", "Test_" + i, "Test");
+            assert (this.userDao.setTeacher(id));
+            assert(this.userDao.getTeachers().size() == i);
+        }
+    }
+
+    @Test
+    public void canGetCorrectAmountOfStudents() {
+        for (int i = 1; i <= 10; i++) {
+            int id = this.userDao.create("Test", "Test", "Test_" + i, "Test");
+            assert (this.userDao.setStudent(id));
+            assert(this.userDao.getStudents().size() == i);
+        }
+    }
+    
+    @AfterClass
+    public static void afterClass() {
+        File f = new File("userdao_test_database.db");
+        f.delete();
+    }
 
 }

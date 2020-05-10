@@ -5,47 +5,15 @@
  */
 package domain;
 
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.DriverManager;
-import java.sql.Time;
-import java.text.SimpleDateFormat;
 import ollikkala.schoolmaster9000.domain.Course;
-import ollikkala.schoolmaster9000.domain.Student;
-import ollikkala.schoolmaster9000.domain.StudentService;
 import ollikkala.schoolmaster9000.domain.User;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
  * @author anttiollikkala
  */
 public class CourseTest {
-
-    public CourseTest() {
-    }
-
-    @BeforeClass
-    public static void setUpClass() {
-    }
-
-    @AfterClass
-    public static void tearDownClass() {
-    }
-
-    @Before
-    public void setUp() {
-
-    }
-
-    @After
-    public void tearDown() {
-    }
 
     @Test
     public void testCanCreateCourse() {
