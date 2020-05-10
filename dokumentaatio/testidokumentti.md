@@ -32,5 +32,5 @@ Testauksen rivikattavuudeksi saavutettiin 83% ja haaraumakaattavuudeksi 85%
 
 ## Mahdolliset virhetilanteet
 Sovelluksessa ei ole tunnettuja virhetilanteita mitä voi syntyä, mikäli asennus- ja käyttöohjeita noudattaa.
-Sovelluksen voi saada rikki, mikäli tietokantatiedoston poistaa kesken sovelluksen toiminnan. Tämän testaaminen eri tilanteissa ei ole kuitenkaan tarkoituksenmukaista.
+Sovelluksen voi saada rikki, mikäli tietokantatiedoston poistaa kesken sovelluksen toiminnan. Tämän testaaminen eri tilanteissa ei ole kuitenkaan tarkoituksenmukaista ja on käyttäjän vastuulla olla tekemättä niin.
 
