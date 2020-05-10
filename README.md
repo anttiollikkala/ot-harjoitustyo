@@ -7,7 +7,7 @@ Sovelluksen avulla voidaan hallinoida koulun toimintaa sekä opettajien, että o
 [Vaatimusmäärittely](/dokumentaatio/vaatimusmaarittely.md)  
 [Arkkitehtuuri](/dokumentaatio/arkkitehtuuri.md)  
 [Käyttöohjeet](/dokumentaatio/instructions.md)  
-[Testidokumentti](/dokumentaatio/testidokumentti.md)
+[Testausdokumentti](/dokumentaatio/testidokumentti.md)
 
 ## Releaset
 [Viikko5](https://github.com/anttiollikkala/ot-harjoitustyo/releases/tag/v0.1)  
