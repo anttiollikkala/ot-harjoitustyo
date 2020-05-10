@@ -88,8 +88,11 @@ public class UI extends Application {
     public void start(Stage stage) throws Exception {
         this.stage = stage;
         Scene scene;
-        if (this.schoolDao.getSchoolName().equals("")) scene = new Scene(this.getCreateNewScoolView(), 640, 480);
-        else scene = new Scene(this.getLoginScene(), 640, 480);
+        if (this.schoolDao.getSchoolName().equals("")) {
+            scene = new Scene(this.getCreateNewScoolView(), 640, 480);
+        } else {
+            scene = new Scene(this.getLoginScene(), 640, 480);
+        }
         stage.setScene(scene);
         stage.show();
     }
@@ -639,8 +642,17 @@ public class UI extends Application {
                 alert.setContentText("Kaikki kentät tulee olla täytetty!");
                 alert.showAndWait();
             } else {
-                this.userService.createStudent(firstNameField.getText(), lastNameField.getText(), emailField.getText(), pwField.getText());
-                this.leftMenu.getSelectionModel().select(this.leftMenu.getSelectionModel().getSelectedItem().getParent());
+                User student = this.userService.createStudent(firstNameField.getText(), lastNameField.getText(), emailField.getText(), pwField.getText());
+                if (student != null) {
+                    this.leftMenu.getSelectionModel().select(this.leftMenu.getSelectionModel().getSelectedItem().getParent());
+                } else {
+                    Alert alert = new Alert(AlertType.WARNING);
+                    alert.setTitle("Virhe");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Samalla sähköpostiosoitteella on jo käyttäjä");
+                    alert.showAndWait();
+                }
+
             }
         });
 
@@ -685,6 +697,12 @@ public class UI extends Application {
                 User teacher = this.userService.createTeacher(firstNameField.getText(), lastNameField.getText(), emailField.getText(), pwField.getText());
                 if (teacher != null) {
                     this.leftMenu.getSelectionModel().select(this.leftMenu.getSelectionModel().getSelectedItem().getParent());
+                } else {
+                    Alert alert = new Alert(AlertType.WARNING);
+                    alert.setTitle("Virhe");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Samalla sähköpostiosoitteella on jo käyttäjä");
+                    alert.showAndWait();
                 }
 
             }
@@ -704,7 +722,7 @@ public class UI extends Application {
         TableView table = new TableView();
 
         stack.getChildren().add(new Label("Klikkaamalla riviä pääset tarkastelemaan opettajan tietoja"));
-        
+
         TableColumn firstName = new TableColumn("Etunimi");
         firstName.setCellValueFactory(new PropertyValueFactory<>("firstName"));
         table.getColumns().add(firstName);
@@ -749,7 +767,7 @@ public class UI extends Application {
         TableView table = new TableView();
 
         stack.getChildren().add(new Label("Klikkaamalla riviä pääset tarkastelemaan opiskelijan tietoja"));
-        
+
         TableColumn firstName = new TableColumn("Etunimi");
         firstName.setCellValueFactory(new PropertyValueFactory<>("firstName"));
         table.getColumns().add(firstName);
