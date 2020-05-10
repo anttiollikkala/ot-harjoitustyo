@@ -16,16 +16,39 @@ public class Teacher extends User {
     
     private ArrayList<Course> courses;
 
+     /**
+     * Constructor of Teacher with an id
+     *
+     * @param id Unique identifier of the user
+     * @param firstName First name of the user
+     * @param lastName Name of the school
+     * @param email Name of the school
+     *
+     */
     public Teacher(int id, String firstName, String lastName, String email) {
         super(id, firstName, lastName, email);
         this.courses = new ArrayList<>();
     }
 
+     /**
+     * Constructor of Teacher with an id
+     *
+     * @param firstName First name of the user
+     * @param lastName Name of the school
+     * @param email Name of the school
+     *
+     */
     public Teacher(String firstName, String lastName, String email) {
-        super(firstName, lastName, email);
+        super(0,firstName, lastName, email);
         this.courses = new ArrayList<>();
     }
     
+     /**
+     * Constructor of Teacher from a user
+     *
+     * @param user the user we are constructing the teacher from
+     *
+     */
     public Teacher(User user) {
         this(user.getId(), user.getFirstName(), user.getLastName(), user.getEmail());
     }

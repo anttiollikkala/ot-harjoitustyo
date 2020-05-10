@@ -18,18 +18,41 @@ public class Student extends User {
     private ArrayList<Course> participations;
     private ArrayList<Completion> completions;
 
+     /**
+     * Constructor of Student with an id
+     *
+     * @param id Unique identifier of the user
+     * @param firstName First name of the user
+     * @param lastName Name of the school
+     * @param email Name of the school
+     *
+     */
     public Student(int id, String firstName, String lastName, String email) {
         super(id, firstName, lastName, email);
         this.participations = new ArrayList<>();
         this.completions = new ArrayList<>();
     }
 
+     /**
+     * Constructor of Student without an id
+     *
+     * @param firstName First name of the user
+     * @param lastName Name of the school
+     * @param email Name of the school
+     *
+     */
     public Student(String firstName, String lastName, String email) {
-        super(firstName, lastName, email);
+        super(0,firstName, lastName, email);
         this.participations = new ArrayList<>();
         this.completions = new ArrayList<>();
     }
 
+     /**
+     * Constructor of Student from a user
+     *
+     * @param user the user we are constructing the Student from
+     *
+     */
     public Student(User user) {
         super(user.getId(), user.getFirstName(), user.getLastName(), user.getEmail());
         this.participations = new ArrayList<>();

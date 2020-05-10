@@ -16,7 +16,16 @@ public class Completion {
     private Course course;
     private final int grade;
     private final String comment;
-    
+     
+    /**
+     * Constructor of Completion
+     *
+     * @param student Reference to the student associated with the completion
+     * @param course Reference to the course associated with the completion
+     * @param grade The grade that the student got from the course
+     * @param comment Optional comment for the completion
+     *
+     */
     public Completion(User student, Course course, int grade, String comment) {
         this.student = student;
         this.course = course;
@@ -24,12 +33,28 @@ public class Completion {
         this.comment = comment;
     }
     
+    /**
+     * Constructor of Completion
+     *
+     * @param course Reference to the course associated with the completion
+     * @param grade The grade that the student got from the course
+     * @param comment Optional comment for the completion
+     *
+     */
     public Completion(Course course, int grade, String comment) {
         this.course = course;
         this.grade = grade;
         this.comment = comment;
     }
     
+    /**
+     * Constructor of Completion
+     *
+     * @param student Reference to the student associated with the completion
+     * @param grade The grade that the student got from the course
+     * @param comment Optional comment for the completion
+     *
+     */
     public Completion(User student, int grade, String comment) {
         this.student = student;
         this.grade = grade;
