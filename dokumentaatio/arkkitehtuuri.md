@@ -4,6 +4,8 @@
 
 Ohjelman toteutuksessa hyödynnetään kolmikerroksista suunnittelumallia, jossa kerrokset ovat ui, domain ja DAO.
 Ui kerros vastaa käyttöliittymästä, domain sovelluslogiikasta ja DAO tietojen pysyväistallennukse hoitamisesta.
+DAO:jen tehtävä on hakea data mahdollisimman yksinkertaisessa muodossa.
+Domain kerros olisi mahdollista jakaa vielä kahteen, sillä se sisältää sekä luokkia jotka kuvaavat vain entiteettejä, joissa on lähtökohtaisesti vain settereitä ja gettereitä, sekä service tyyppisiä luokkia jotka hakevat, tallentavat ja yhdistävät -dataa muiden service-luokkien ja DAO:jen avulla.
 
 Pakkausten hierarkia on seuraava  
 [ui]-->[domain]-->[dao]  
