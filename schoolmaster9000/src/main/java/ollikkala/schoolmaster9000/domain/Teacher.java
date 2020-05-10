@@ -39,11 +39,11 @@ public class Teacher extends User {
      *
      */
     public Teacher(String firstName, String lastName, String email) {
-        super(0,firstName, lastName, email);
+        super(0, firstName, lastName, email);
         this.courses = new ArrayList<>();
     }
     
-     /**
+    /**
      * Constructor of Teacher from a user
      *
      * @param user the user we are constructing the teacher from

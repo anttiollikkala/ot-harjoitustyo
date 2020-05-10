@@ -8,8 +8,9 @@ package ollikkala.schoolmaster9000.domain;
 import java.util.ArrayList;
 
 /**
- * 
- * Class describes the concept of student. Class extends the class User and has additional variables for completed and incomplete courses.
+ *
+ * Class describes the concept of student. Class extends the class User and has
+ * additional variables for completed and incomplete courses.
  *
  * @author anttiollikkala
  */
@@ -18,7 +19,7 @@ public class Student extends User {
     private ArrayList<Course> participations;
     private ArrayList<Completion> completions;
 
-     /**
+    /**
      * Constructor of Student with an id
      *
      * @param id Unique identifier of the user
@@ -33,7 +34,7 @@ public class Student extends User {
         this.completions = new ArrayList<>();
     }
 
-     /**
+    /**
      * Constructor of Student without an id
      *
      * @param firstName First name of the user
@@ -42,12 +43,12 @@ public class Student extends User {
      *
      */
     public Student(String firstName, String lastName, String email) {
-        super(0,firstName, lastName, email);
+        super(0, firstName, lastName, email);
         this.participations = new ArrayList<>();
         this.completions = new ArrayList<>();
     }
 
-     /**
+    /**
      * Constructor of Student from a user
      *
      * @param user the user we are constructing the Student from
@@ -59,7 +60,7 @@ public class Student extends User {
         this.completions = new ArrayList<>();
     }
 
-     /**
+    /**
      * Calculates the total study points of user from the completions ArrayList
      *
      * @return the sum of study points
