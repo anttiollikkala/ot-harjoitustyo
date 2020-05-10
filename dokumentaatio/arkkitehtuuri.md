@@ -43,4 +43,4 @@ Tietokannassa käyttäjät ovat taulussa users, kurssit courses, koulun tiedot t
 
 ## Päätoiminnallisuudet
 Tilanteen alussa käyttäjä on luomassa koulua ja täyttänyt jo vaadittavat kentät koulun luomista varten.
-<img alt="Sekvenssikaavio" src="https://github.com/anttiollikkala/ot-harjoitustyo/blob/master/dokumentaatio/img/Sekvenssikaavio.png?raw=true">
+<img alt="Sekvenssikaavio" src="https://github.com/anttiollikkala/ot-harjoitustyo/blob/master/dokumentaatio/img/koulunluonti.png?raw=true">
