@@ -37,6 +37,9 @@ Luokkakaaviossa on "luokkia" joita sovelluksen toteutuksessa ei todellisuudessa 
 Sovellukseen luodaan Data Access Object -mallilla rajapinta SQLite tietokantaan. 
 Kaikki sovelluksen tiedot tallennetaan yhteen tietokantatiedostoon siihen kansioon, mistä sovellus ajetaan.  
 
+### Taulut
+Tietokannassa käyttäjät ovat taulussa users, kurssit courses, koulun tiedot taulussa config ja kurssi-ilmoittautumisten ja suoritusten liitostaulu on taulussa participations. Käyttäjien sähköpostien, kurssien nimien ja tunnunnusten uniikkius on varmistettu tietokantatasolla unique constrainteilla. Käyttäjien kurssi-ilmoittautumisten ja suoritusten yhdistelmien uniikkius on myös varmistettu tietokantatasolla course_id ja user_id yhdistelmän unique constraintilla. Tauluissa on myös foreign key referenssejä, mutta niiden merkitys ei ole kovin suuri, sillä virheellisten syötteiden antaminen on UI tasolla mahdotonta ja sellaisia rivejä ei voida tietokannasta poistaa mikä voisi aiheuttaa konfliktin referensseissä.
+
 
 ## Päätoiminnallisuudet
 Tilanteen alussa käyttäjä on luomassa koulua ja täyttänyt jo vaadittavat kentät koulun luomista varten.
