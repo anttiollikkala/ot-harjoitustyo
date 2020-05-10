@@ -1,0 +1,17 @@
+# Testausdokumentti
+
+Sovellukseen on tehty automaattiset yksikkö-, sekä integraatiotestit JUnit kirjastoa hyväksikäyttäen. 
+Järjestelmätason testit on suoritettu manuaalisesti katsoen että kaikki sovelluksen ominaisuuden toimivat tarkoituksenmukaisella tavalla.
+
+## Yksikkötestaukset
+
+Sovelluksen yksikkötestaukset kohdistuu kaikkiin DAO-luokkiin, sekä muutamassa tapauksessa myös entiteettejä kuvaaviin luokkiin, mutta entiteettien testaus laajasti ei ole tarkoituksenmukaista, sillä ne eivät sisällä kuin hyvin yksinkertaista logiikkaa, kuten settereitä ja gettereitä. DAO-luokkia testatessa luodaan uusi tietokanta testien alussa ja tietokantatiedosto poistetaan testien lopuksi.
+
+## Integraatiotestaus
+
+Service luokkien kattavalla testauksella on saavutettu sopivat integraatiotestauksen taso. Service luokkien pääasiallinen tarkoitus järjestelmässä on yhdistellä dataa käyttäen eri tietolähteitä (muut service-luokat & DAO-luokat), niin niiden toiminnan testaaminen 
+
+## Testikattavuus
+
+Testauksen rivikattavuudeksi saavutettiin 83% ja haaraumakaattavuudeksi 85%
+

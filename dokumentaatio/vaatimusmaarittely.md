@@ -35,7 +35,7 @@ Rehtori voi lisätä opettajia ja oppilaita ja opettaja voi lisätä oppilaita.
  - Luoda kursseja joihin oppilaat voi osallistua TEHTY
  - Arvostella kursseille osallistujien suorituksia arvosanoin ja kommentoida suoritusta. TEHTY
  - Ei voi luoda samalla nimellä tai tunnuksella toista kurssia TEHTY
- - Ei voi luoda jo järjestelmässä olevallsähköpostiosoitteella oppilasta TEHTY
+ - Ei voi luoda jo järjestelmässä olevalla sähköpostiosoitteella oppilasta TEHTY
  - Tarkastella oppilaiden tietoja, osallistumisia ja suorituksia oppilassivulla TEHTY
 
 #### Rehtori
