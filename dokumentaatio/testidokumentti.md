@@ -15,5 +15,5 @@ Service luokkien kattavalla testauksella on saavutettu sopivat integraatiotestau
 
 Testauksen rivikattavuudeksi saavutettiin 83% ja haaraumakaattavuudeksi 85%
 
-<img alt="luokkakaavio" src="https://github.com/anttiollikkala/ot-harjoitustyo/blob/master/dokumentaatio/img/testikattavuus.png?raw=true" width="500">  
+<img alt="luokkakaavio" src="https://github.com/anttiollikkala/ot-harjoitustyo/blob/master/dokumentaatio/img/testikattavuus.png?raw=true">  
 
