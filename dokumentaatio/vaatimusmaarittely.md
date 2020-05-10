@@ -26,17 +26,23 @@ Rehtori voi lisätä opettajia ja oppilaita ja opettaja voi lisätä oppilaita.
 
 #### Oppilas
  - Oppilas voi liittyä kursseille TEHTY
- - Tarkastella opintohistoriaa
- - Tehdä muistiinpanoja kursseihin liittyen
+ - Voi poistua kurssilta, jos sitä ei ole merkitty opettajan toimesta vielä suoritetuksi TEHTY
+ - Tarkastella opintohistoriaa TEHTY
+ - Estetty liittyminen samalle kurssille ueampaan kertaan TEHTY
+ - Estetty poistuminen kurssilta jos jo suoritettu TEHTY
 
 #### Opettaja
- - Opettaja voi luoda kursseja TEHTY
  - Luoda kursseja joihin oppilaat voi osallistua TEHTY
- - Arvostella kursseille osallistujien suorituksia arvosanoin.
+ - Arvostella kursseille osallistujien suorituksia arvosanoin ja kommentoida suoritusta. TEHTY
+ - Ei voi luoda samalla nimellä tai tunnuksella toista kurssia TEHTY
+ - Ei voi luoda jo järjestelmässä olevallsähköpostiosoitteella oppilasta TEHTY
+ - Tarkastella oppilaiden tietoja, osallistumisia ja suorituksia oppilassivulla TEHTY
 
 #### Rehtori
  - Kaikkea mitä opettaja TEHTY
  - Lisätä opettajia järjestelmään TEHTY
+ - Ei voi luoda jo järjestelmässä olevalla sähköpostiosoitteella opettajaa TEHTY
+ - Voi tarkastella opettajien tietoja ja listata kurssit joille he opettavat TEHTY
  
 #### Kaikki käyttäjät
 - Voi tarkastella luotuja kursseja TEHTY
