@@ -3,6 +3,7 @@
 Lataa viimeisin versio [tästä](https://github.com/anttiollikkala/ot-harjoitustyo/releases/download/v1.1/schoolmaster9000-1.0-SNAPSHOT.jar)  
 Laita suoritettava jar tiedosto sellaiseen hakemistoon, johon sinulla on luku- ja kirjoitusoikeudet.
 ## Ohjelman käynnistys
+Mene komentorivillä hakemistoon johon asensit tiedoston ja suorita seuraava komento:
 ```
 java -jar schoolmaster9000-1.0-SNAPSHOT.jar
 ```
