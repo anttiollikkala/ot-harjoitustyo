@@ -30,3 +30,7 @@ Testauksen rivikattavuudeksi saavutettiin 83% ja haaraumakaattavuudeksi 85%
 
 <img alt="luokkakaavio" src="https://github.com/anttiollikkala/ot-harjoitustyo/blob/master/dokumentaatio/img/testikattavuus.png?raw=true">  
 
+## Mahdolliset virhetilanteet
+Sovelluksessa ei ole tunnettuja virhetilanteita mitä voi syntyä, mikäli asennus- ja käyttöohjeita noudattaa.
+Sovelluksen voi saada rikki, mikäli tietokantatiedoston poistaa kesken sovelluksen toiminnan. Tämän testaaminen eri tilanteissa ei ole kuitenkaan tarkoituksenmukaista.
+
