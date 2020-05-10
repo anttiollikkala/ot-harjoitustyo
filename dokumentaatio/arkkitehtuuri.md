@@ -25,7 +25,7 @@ Kirjautumisen jälkeen sovelluksen vasemmassa laidassa on aina päävalikko. Oik
 - Opettajien listaussivu
   - Uuden opettajan luomiskaavake
   - Opettajasivu, jonka saa auki, kun klikkaa opettajaa listaussivulla
-
+Näkymien saatavuus on rajoitettu kirjautuneen käyttäjän oikeuksien perusteella
 ## Sovelluslogiikka
 Sovellus noudattaa ratkaisevilta osin seuraavan luokkaakaavion kuvaavaa mallia:
 <img alt="luokkakaavio" src="https://github.com/anttiollikkala/ot-harjoitustyo/blob/master/dokumentaatio/img/sekvenssikaavio2.png?raw=true" width="500">
