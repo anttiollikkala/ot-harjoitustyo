@@ -32,7 +32,8 @@ Sovellus noudattaa ratkaisevilta osin seuraavan luokkaakaavion kuvaavaa mallia:
 ## Tietojen pysyväistallennus
 
 Sovellukseen luodaan Data Access Object -mallilla rajapinta SQLite tietokantaan. 
-Kaikki sovelluksen tiedot tallennetaan yhteen tietokantatiedostoon siihen kansioonm , mistä sovellus ajetaan.
+Kaikki sovelluksen tiedot tallennetaan yhteen tietokantatiedostoon siihen kansioon, mistä sovellus ajetaan.  
+
 
 ## Päätoiminnallisuudet
 Tilanteen alussa käyttäjä on luomassa koulua ja täyttänyt jo vaadittavat kentät koulun luomista varten.
