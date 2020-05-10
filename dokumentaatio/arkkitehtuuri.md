@@ -5,6 +5,27 @@
 Ohjelman toteutuksessa hyödynnetään kolmikerroksista suunnittelumallia, jossa kerrokset ovat ui, domain ja DAO.
 Ui kerros vastaa käyttöliittymästä, domain sovelluslogiikasta ja DAO tietojen pysyväistallennukse hoitamisesta.
 
+Pakkausten hierarkia on seuraava  
+[ui]-->[domain]-->[dao]  
+
+## Käyttöliittymä
+Käyttöliittymässä on monta eri näkymää ja ne ovat seuraavanlaiset
+#### Ennen kirjautumista
+ - Koulun luomiskaavake, jos koulua ei ole vielä luotu
+ - Kirjautumislomake, jos koulu on jo luotu
+#### Kirjautumisen jälkeen
+Kirjautumisen jälkeen sovelluksen vasemmassa laidassa on aina päävalikko. Oikeanpuoleisessa näkymässä vaihtelee alinäkymät seuraavien mahdollisuuskien mukaan:
+- Omien tietojen muokkaussivu
+- Kurssien listaussivu
+  - Uuden kurssin luomissivu
+  - Kurssisivu jonka saa auki, kun klikkaa kurssia listaussivulla
+- Opiskelijoiden listaussivu
+  - Uuden opiskelijan luomiskaavake
+  - Opiskelijasivu jonka saa auki, kun klikkaa opiskelijaa listaussivulla
+- Opettajien listaussivu
+  - Uuden opettajan luomiskaavake
+  - Opettajasivu, jonka saa auki, kun klikkaa opettajaa listaussivulla
+
 ## Sovelluslogiikka
 Sovellus noudattaa ratkaisevilta osin seuraavan luokkaakaavion kuvaavaa mallia:
 <img alt="luokkakaavio" src="https://github.com/anttiollikkala/ot-harjoitustyo/blob/master/dokumentaatio/img/sekvenssikaavio2.png?raw=true" width="500">
