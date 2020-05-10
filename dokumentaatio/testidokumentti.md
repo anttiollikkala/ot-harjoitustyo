@@ -9,7 +9,7 @@ Sovelluksen yksikkötestaukset kohdistuu kaikkiin DAO-luokkiin, sekä muutamassa
 
 ## Integraatiotestaus
 
-Service luokkien kattavalla testauksella on saavutettu sopivat integraatiotestauksen taso. Service luokkien pääasiallinen tarkoitus järjestelmässä on yhdistellä dataa käyttäen eri tietolähteitä ja luokkia (muut service-luokat & DAO-luokat), niin niiden toiminnan testaaminen on vääjäämättä testannut luokkien yhteistoimintaa.
+Service luokkien kattavalla testauksella on saavutettu sopivat integraatiotestauksen taso. Service luokkien pääasiallinen tarkoitus järjestelmässä on yhdistellä dataa käyttäen eri tietolähteitä ja luokkia (muut service-luokat & DAO-luokat), niin niiden toiminnan testaaminen on vääjäämättä testannut luokkien yhteistoimintaa. Service luokkien automaattisia testejä varten järjestelmä luo myös testitietokannat, joiden tiedostot se poistaa testien päätyttyä.
 
 ## Testikattavuus
 
