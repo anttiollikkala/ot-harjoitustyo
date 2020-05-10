@@ -30,7 +30,7 @@ Kirjautumisen jälkeen sovelluksen vasemmassa laidassa on aina päävalikko. Oik
 Näkymien saatavuus on rajoitettu kirjautuneen käyttäjän oikeuksien perusteella
 ## Sovelluslogiikka
 Sovellus noudattaa ratkaisevilta osin seuraavan luokkaakaavion kuvaavaa mallia:
-<img alt="luokkakaavio" src="https://github.com/anttiollikkala/ot-harjoitustyo/blob/master/do kumentaatio/img/sekvenssikaavio2.png?raw=true" width="500">  
+<img alt="luokkakaavio" src="https://github.com/anttiollikkala/ot-harjoitustyo/blob/master/dokumentaatio/img/sekvenssikaavio2.png?raw=true" width="500">  
 Luokkakaaviossa on "luokkia" joita sovelluksen toteutuksessa ei todellisuudessa ole (school & principal), mutta ne on sisällytetty kaavioon helpottamaan käsitteiden rakenteen hierarkiaa
 ## Tietojen pysyväistallennus
 
