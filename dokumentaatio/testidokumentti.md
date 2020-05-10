@@ -1,7 +1,7 @@
 # Testausdokumentti
 
 Sovellukseen on tehty automaattiset yksikkö-, sekä integraatiotestit JUnit kirjastoa hyväksikäyttäen. 
-Järjestelmätason testit on suoritettu manuaalisesti katsoen että kaikki sovelluksen ominaisuuden toimivat tarkoituksenmukaisella tavalla.
+Järjestelmätason testit on suoritettu manuaalisesti katsoen että kaikki sovelluksen ominaisuuden toimivat tarkoituksenmukaisella tavalla. Käyttöliittymän testaus on jätetty pois kaikista automaattisista testeistä ja testikattavuuden raportista.
 
 ## Yksikkötestaukset
 
