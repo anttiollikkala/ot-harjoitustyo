@@ -49,5 +49,5 @@ Komennolla
 ```
 mvn jxr:jxr checkstyle:checkstyle
 ```
-Raportti löytyy tiedostosta:target/site/checkstyle.html
+Raportti löytyy tiedostosta target/site/checkstyle.html
 
